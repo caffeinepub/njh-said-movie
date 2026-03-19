@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    /* Cinema dark theme - always dark */
+    --background: 0.108 0.012 252;
+    --foreground: 0.96 0.008 252;
+    --card: 0.15 0.018 252;
+    --card-foreground: 0.96 0.008 252;
+    --popover: 0.18 0.022 252;
+    --popover-foreground: 0.96 0.008 252;
+    --primary: 0.57 0.19 260;
+    --primary-foreground: 0.985 0 0;
+    --secondary: 0.18 0.025 252;
+    --secondary-foreground: 0.96 0.008 252;
+    --muted: 0.22 0.02 252;
+    --muted-foreground: 0.72 0.018 252;
+    --accent: 0.82 0.14 210;
+    --accent-foreground: 0.1 0 0;
+    --destructive: 0.54 0.24 15;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.26 0.03 252;
+    --input: 0.26 0.03 252;
+    --ring: 0.57 0.19 260;
+    --gold: 0.83 0.15 80;
+    --cyan: 0.82 0.14 210;
+    --purple: 0.65 0.22 300;
+    --chart-1: 0.57 0.19 260;
+    --chart-2: 0.65 0.22 300;
+    --chart-3: 0.82 0.14 210;
+    --chart-4: 0.83 0.15 80;
+    --chart-5: 0.54 0.24 15;
+    --sidebar: 0.15 0.018 252;
+    --sidebar-foreground: 0.96 0.008 252;
+    --sidebar-primary: 0.57 0.19 260;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.22 0.02 252;
+    --sidebar-accent-foreground: 0.96 0.008 252;
+    --sidebar-border: 0.26 0.03 252;
+    --sidebar-ring: 0.57 0.19 260;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: oklch(0.14 0.018 252);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: oklch(0.3 0.03 252);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.4 0.05 260);
+  }
+}
+
+@layer utilities {
+  .gradient-brand {
+    background: linear-gradient(
+      135deg,
+      oklch(0.82 0.14 210),
+      oklch(0.65 0.22 300)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-cta {
+    background: linear-gradient(
+      135deg,
+      oklch(0.57 0.19 260),
+      oklch(0.52 0.22 290)
+    );
+  }
+
+  .card-glass {
+    background: oklch(0.15 0.018 252 / 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .hero-gradient {
+    background: linear-gradient(
+      to right,
+      oklch(0.108 0.012 252 / 0.98) 0%,
+      oklch(0.108 0.012 252 / 0.85) 40%,
+      oklch(0.108 0.012 252 / 0.4) 65%,
+      oklch(0.108 0.012 252 / 0.05) 100%
+    );
+  }
+
+  .hero-gradient-bottom {
+    background: linear-gradient(
+      to top,
+      oklch(0.108 0.012 252) 0%,
+      oklch(0.108 0.012 252 / 0.6) 40%,
+      transparent 100%
+    );
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+}
